@@ -1,4 +1,4 @@
-# MARS IT School (marsit.uz) — Official Landing Page
+# MARS IT School (https://faxriddin000.github.io/test/) — Official Landing Page
 
 Ultra-modern, responsive, high-converting landing page for **MARS IT School** ([marsit.uz](https://marsit.uz)), featuring the **MarsHub** AI environment, **SPACE** learning platform, and 3D antigravity cosmic visuals.
 
