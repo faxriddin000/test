@@ -1,0 +1,564 @@
+/* ========================================================
+   MARS IT School (marsit.uz) - Official Landing Page Design
+   Typography: Plus Jakarta Sans / Outfit + JetBrains Mono
+   Palette: Deep Charcoal (#121212 / #141414) & Brand Orange (#E04318 / #F27A24)
+   ======================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-deep: #121212;
+  --bg-secondary: #141414;
+  --bg-card: #1A1A1A;
+  --bg-card-hover: #222222;
+  --text-muted: #9E9EA7;
+  --number-faint: #3A3F4D;
+  --accent-orange: #E04318;
+  --accent-orange-hover: #D9431A;
+  --accent-orange-glow: rgba(224, 67, 24, 0.45);
+  --accent-marshub: #F27A24;
+
+  --font-sans: 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #121212;
+  color: #FFFFFF;
+  overflow-x: hidden;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(224, 67, 24, 0.45);
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 9999px;
+  border: 2px solid #121212;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-orange);
+}
+
+/* Hero Top Mars Ambient Glow */
+.hero-ambient-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 980px;
+  background: radial-gradient(circle at 35% 10%, rgba(224, 67, 24, 0.45) 0%, rgba(140, 35, 10, 0.2) 35%, rgba(18, 18, 18, 1) 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating Transparent Pill Navbar */
+.floating-navbar {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: rgba(38, 38, 38, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* Nav Dropdown Menus */
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(14px);
+  min-width: 250px;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(224, 67, 24, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 60;
+}
+
+.nav-dropdown-wrapper:hover .nav-dropdown-menu,
+.nav-dropdown-wrapper:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateX(-50%) translateY(8px);
+}
+
+/* Specific Dropdown for Filiallar */
+.nav-dropdown-filiallar {
+  width: 290px;
+  border-radius: 28px;
+  padding: 1.5rem;
+  background: rgba(20, 20, 20, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.95), 0 0 35px rgba(224, 67, 24, 0.15);
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #D1D5DB;
+  transition: all 0.2s ease;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(224, 67, 24, 0.12);
+  color: #FFFFFF;
+  transform: translateX(3px);
+}
+
+/* Orange Buttons */
+.btn-orange-hero {
+  background: #E04318;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 9999px;
+  padding: 0.95rem 2rem;
+  box-shadow: 0 0 35px rgba(224, 67, 24, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.btn-orange-hero:hover {
+  background: #D9431A;
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px rgba(224, 67, 24, 0.7);
+}
+
+/* ========================================================
+   HERO 3D VISUALS & ANTIGRAVITY ENGINE
+   Mars Planet, Floating Astronaut, Hologram Rings & Chat Bubble
+   ======================================================== */
+.mars-container {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .mars-container {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+.mars-3d-sphere {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, #ff957b 0%, #ff542e 22%, #d6330c 48%, #851a02 75%, #2a0500 100%);
+  box-shadow: 
+    inset -45px -45px 90px rgba(0, 0, 0, 0.95),
+    inset 20px 20px 40px rgba(255, 210, 195, 0.5),
+    0 0 50px rgba(255, 59, 25, 0.45),
+    0 0 120px rgba(255, 59, 25, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Atmospheric rim lighting */
+.mars-atmosphere-rim {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 60%, rgba(255, 110, 70, 0.25) 75%, rgba(255, 59, 25, 0.8) 88%, transparent 100%);
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+/* Planet surface craters texture */
+.mars-crater {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(90, 18, 4, 0.7) 0%, rgba(130, 28, 6, 0.4) 60%, transparent 100%);
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.7), inset -1px -1px 3px rgba(255, 120, 80, 0.3);
+}
+
+/* Antigravity Astronaut Float Animation (Subtle translateY -8px to 8px) */
+@keyframes antigravity-subtle {
+  0%, 100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.antigravity-float-subtle {
+  animation: antigravity-subtle 4.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes antigravity-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-16px) rotate(1.5deg);
+  }
+  70% {
+    transform: translateY(-8px) rotate(-1.5deg);
+  }
+}
+
+.antigravity-astronaut {
+  animation: antigravity-float 6.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Holographic Orbiting Code Rings */
+@keyframes hologram-spin-1 {
+  0% {
+    transform: rotateX(68deg) rotateY(12deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(68deg) rotateY(12deg) rotateZ(360deg);
+  }
+}
+
+@keyframes hologram-spin-2 {
+  0% {
+    transform: rotateX(62deg) rotateY(-18deg) rotateZ(360deg);
+  }
+  100% {
+    transform: rotateX(62deg) rotateY(-18deg) rotateZ(0deg);
+  }
+}
+
+.hologram-ring-1 {
+  animation: hologram-spin-1 18s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.hologram-ring-2 {
+  animation: hologram-spin-2 24s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* Floating speech bubble with 3D mini robot avatar */
+@keyframes chat-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.floating-chat-bubble {
+  animation: chat-float 5s ease-in-out infinite;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(22, 24, 27, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 59, 25, 0.15);
+}
+
+/* ========================================================
+   MAIN STACKED HORIZONTAL CARDS
+   Dark Charcoal (#1A1A1A / #222222) with 1px solid rgba(255, 255, 255, 0.07)
+   hover:border-[#E04318]/50 transition-all duration-300
+   ======================================================== */
+.stacked-card {
+  background-color: #1A1A1A;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 28px;
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stacked-card:hover {
+  background-color: #222222;
+  border-color: rgba(224, 67, 24, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 35px rgba(224, 67, 24, 0.15);
+}
+
+/* Card Number Styling */
+.card-number {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  color: var(--number-faint);
+  line-height: 1;
+  transition: color 0.35s ease, transform 0.35s ease;
+  user-select: none;
+}
+
+.stacked-card:hover .card-number {
+  color: var(--accent-orange);
+  transform: scale(1.05);
+}
+
+/* 3D Circular Badge */
+.badge-3d-container {
+  width: 130px;
+  height: 130px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, rgba(224, 67, 24, 0.28) 0%, rgba(24, 24, 24, 0.95) 70%, #121212 100%);
+  border: 1px solid rgba(224, 67, 24, 0.25);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.8), inset 0 2px 8px rgba(224, 67, 24, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.badge-3d-glow {
+  position: absolute;
+  inset: -15px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(224, 67, 24, 0.4) 0%, transparent 70%);
+  opacity: 0.3;
+  filter: blur(12px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.stacked-card:hover .badge-3d-container {
+  transform: scale(1.06) rotate(3deg);
+  border-color: rgba(224, 67, 24, 0.6);
+  box-shadow: 0 15px 40px -5px rgba(224, 67, 24, 0.3), inset 0 2px 14px rgba(224, 67, 24, 0.5);
+}
+
+.stacked-card:hover .badge-3d-glow {
+  opacity: 0.8;
+  transform: scale(1.15);
+}
+
+/* ========================================================
+   MARSHUB SECTION STYLES
+   ======================================================== */
+.marshub-glow {
+  background: radial-gradient(circle at 85% 15%, rgba(242, 122, 36, 0.14), transparent 60%);
+}
+
+.marshub-mini-card {
+  transition: all 0.25s ease;
+}
+
+.marshub-mini-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(242, 122, 36, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  transform: scale(0.95) translateY(10px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #181818;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(224, 67, 24, 0.15);
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .stacked-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ========================================================
+   INFINITE AUTO-SCROLLING VIDEO TESTIMONIALS CAROUSEL
+   ======================================================== */
+.video-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1.5rem 0 2.5rem 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.video-marquee-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.video-marquee-track {
+  display: flex;
+  gap: 1.75rem;
+  width: max-content;
+  animation: video-marquee 36s linear infinite;
+  will-change: transform;
+}
+
+.video-marquee-wrapper:hover .video-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes video-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.875rem));
+  }
+}
+
+/* Video Card Structure */
+.video-card-container {
+  width: 270px;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-card-container:hover {
+  transform: translateY(-6px);
+}
+
+.video-card-poster {
+  height: 460px;
+  width: 270px;
+  border-radius: 32px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #12151B;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-card-container:hover .video-card-poster {
+  border-color: rgba(224, 67, 24, 0.45);
+  box-shadow: 0 30px 60px -15px rgba(224, 67, 24, 0.25), 0 0 0 1px rgba(224, 67, 24, 0.3);
+}
+
+.video-card-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.video-card-container:hover .video-card-poster img {
+  transform: scale(1.05);
+}
+
+/* Dark gradient overlays */
+.video-card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 15, 18, 0.15) 0%, rgba(13, 15, 18, 0.2) 50%, rgba(13, 15, 18, 0.85) 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.video-card-container:hover .video-card-gradient {
+  background: linear-gradient(180deg, rgba(13, 15, 18, 0.05) 0%, rgba(13, 15, 18, 0.15) 45%, rgba(13, 15, 18, 0.9) 100%);
+}
+
+/* Center Play Button */
+.video-play-btn {
+  width: 3.5rem; /* 56px / w-14 */
+  height: 3.5rem; /* 56px / h-14 */
+  border-radius: 9999px;
+  background-color: #E04318;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(224, 67, 24, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 10;
+}
+
+.video-card-container:hover .video-play-btn {
+  background-color: #D9431A;
+  transform: scale(1.12);
+  box-shadow: 0 14px 35px rgba(224, 67, 24, 0.75), 0 0 0 8px rgba(224, 67, 24, 0.2);
+}
+
+/* Video Modal */
+#video-testimonial-modal .modal-content {
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.95), 0 0 50px rgba(224, 67, 24, 0.2);
+  max-width: 800px;
+  width: 95%;
+  border-radius: 28px;
+  overflow: hidden;
+  padding: 0;
+}
+

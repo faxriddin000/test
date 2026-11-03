@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARS IT School — Bolalar va o'smirlar uchun zamonaviy IT-maktab</title>
+  <meta name="description" content="Bolalar va o'smirlar (9-17 yosh) uchun zamonaviy dasturlash, sun'iy intellekt va texnologiyalar maktabi. MarsHub, SPACE platformasi va FAANG amaliyoti.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#E04318',
+              'orange-hover': '#D9431A',
+              marshub: '#F27A24',
+              dark1: '#121212',
+              dark2: '#141414',
+              card1: '#1A1A1A',
+              card2: '#222222',
+              muted: '#9E9EA7',
+              faint: '#3A3F4D'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Outfit"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#121212] text-white antialiased selection:bg-[#E04318]/40 selection:text-white relative min-h-screen font-sans">
+
+  <!-- Hero Top Mars Ambient Glow (radial-gradient behind transparent navbar) -->
+  <div class="hero-ambient-glow"></div>
+
+  <!-- Ambient background glow mesh across other page sections -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute top-[35%] -right-40 w-[650px] h-[650px] bg-[radial-gradient(circle,rgba(242,122,36,0.06)_0%,rgba(18,18,18,0)_75%)] blur-[120px]"></div>
+    <div class="absolute top-[65%] -left-32 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(224,67,24,0.05)_0%,rgba(18,18,18,0)_70%)] blur-[110px]"></div>
+  </div>
+
+
+  <!-- ==========================================
+       1. FLOATING TRANSPARENT PILL NAVBAR
+       Fixed at top (top-5 inset-x-0 mx-auto max-w-[1320px] z-50)
+       Frosted glass (bg-white/[0.08] backdrop-blur-xl border border-white/15 shadow-2xl)
+       ========================================== -->
+  <header class="fixed top-5 inset-x-0 mx-auto max-w-[1320px] w-[95%] z-50 floating-navbar rounded-full px-6 sm:px-8 py-3.5 sm:py-4 flex items-center justify-between transition-all">
+    
+    <!-- Left Logo: Lowercase bold white text mars with small hollow orange circle at top-right (mars°) -->
+    <a href="#" class="flex items-center text-2xl sm:text-3xl font-extrabold tracking-tight text-white group select-none flex-shrink-0 font-sans">
+      <span>mars</span><span class="inline-block w-2.5 h-2.5 rounded-full border-2 border-[#E04318] ml-0.5 -mt-3.5 group-hover:bg-[#E04318] transition-colors"></span>
+    </a>
+
+    <!-- Center Navigation Links: Ta'lim, Maktab haqida, Filiallar, Blog, Kontaktlar -->
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-white/90">
+      
+      <!-- Dropdown: Ta'lim ∨ -->
+      <div class="nav-dropdown-wrapper">
+        <button class="flex items-center gap-1 hover:text-[#E04318] transition-colors cursor-pointer py-1">
+          <span data-i18n="nav_courses">Ta'lim</span>
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="#courses" class="nav-dropdown-item">
+            <span class="w-2 h-2 rounded-full bg-[#E04318]"></span>
+            <span data-i18n="drop_courses_1">AI Kids (9–11 yosh)</span>
+          </a>
+          <a href="#courses" class="nav-dropdown-item">
+            <span class="w-2 h-2 rounded-full bg-[#E04318]"></span>
+            <span data-i18n="drop_courses_2">AI Pilot (12–14 yosh)</span>
+          </a>
+          <a href="#courses" class="nav-dropdown-item">
+            <span class="w-2 h-2 rounded-full bg-[#E04318]"></span>
+            <span data-i18n="drop_courses_3">Hub Pro (15–17 yosh)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Dropdown: Maktab haqida ∨ -->
+      <div class="nav-dropdown-wrapper">
+        <button class="flex items-center gap-1 hover:text-[#E04318] transition-colors cursor-pointer py-1">
+          <span data-i18n="nav_about">Maktab haqida</span>
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="#main-features" class="nav-dropdown-item">
+            <span class="text-[#E04318] font-bold">🚀</span>
+            <span data-i18n="drop_about_1">SPACE platformasi</span>
+          </a>
+          <a href="#main-features" class="nav-dropdown-item">
+            <span class="text-[#E04318] font-bold">📚</span>
+            <span data-i18n="drop_about_2">Eduverse kutubxonasi</span>
+          </a>
+          <a href="#marshub" class="nav-dropdown-item">
+            <span class="text-[#F27A24] font-bold">⚡</span>
+            <span>MarsHub AI Muhit</span>
+          </a>
+          <a href="#main-features" class="nav-dropdown-item">
+            <span class="text-[#E04318] font-bold">💻</span>
+            <span data-i18n="drop_about_3">MarsCode tizimi</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Dropdown: Filiallar (Match Screenshot 4) -->
+      <div class="nav-dropdown-wrapper">
+        <button class="flex items-center gap-1 hover:text-[#E04318] transition-colors cursor-pointer py-1">
+          <span data-i18n="nav_branches">Filiallar</span>
+          <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="nav-dropdown-menu nav-dropdown-filiallar">
+          <div class="font-mono text-xs font-bold uppercase tracking-[0.14em] text-[#E04318] mb-4" data-i18n="drop_branches_title">
+            TOSHKENTDAGI 6 TA FILIAL
+          </div>
+          <div class="space-y-3.5 font-sans text-[15px] font-semibold text-white/90">
+            <a href="#branches" class="block hover:text-[#E04318] transition">Tinchlik (Bosh kampus)</a>
+            <a href="#branches" class="block hover:text-[#E04318] transition">Yunusobod (Mega Planet)</a>
+            <a href="#branches" class="block hover:text-[#E04318] transition">Chilonzor (Parus)</a>
+            <a href="#branches" class="block hover:text-[#E04318] transition">Sergeli (Depo Mall)</a>
+            <a href="#branches" class="block hover:text-[#E04318] transition">Buyuk Ipak Yo'li</a>
+            <a href="#branches" class="block hover:text-[#E04318] transition">Minor (Amir Temur)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Static: Blog -->
+      <a href="#main-features" class="hover:text-[#E04318] transition-colors" data-i18n="nav_blog">Blog</a>
+
+      <!-- Static: Kontaktlar -->
+      <a href="#contacts" class="hover:text-[#E04318] transition-colors" data-i18n="nav_contact">Kontaktlar</a>
+    </nav>
+
+    <!-- Right Actions: Phone, Testdan o'tish button, Language Selector -->
+    <div class="flex items-center gap-3 sm:gap-4">
+      
+      <!-- Phone number with orange +998 prefix: +998 (78) 777 77 57 -->
+      <a href="tel:+998787777757" class="hidden md:flex items-center text-[16px] tracking-tight font-medium hover:opacity-90 transition font-sans">
+        <span class="text-[#E04318] font-bold mr-1">+998</span> <span class="text-white font-bold">(78) 777 77 57</span>
+      </a>
+
+      <!-- Button 1: "Testdan o'tish" — transparent pill button -->
+      <button class="open-quiz-modal px-5 sm:px-6 py-2.5 rounded-full border border-white/25 bg-white/5 hover:bg-white/15 text-white text-sm font-medium transition cursor-pointer shadow-sm">
+        <span data-i18n="nav_test_btn">Testdan o'tish</span>
+      </button>
+
+      <!-- Language Selector: Circular dark button (w-11 h-11) displaying "O'z" -->
+      <div class="relative group">
+        <button id="lang-current-btn" class="w-11 h-11 rounded-full bg-[#0F0F0F] text-white font-bold text-sm flex items-center justify-center border border-white/10 hover:border-white/20 transition cursor-pointer shadow-md font-sans">
+          <span id="lang-current-label">O'z</span>
+        </button>
+        <div class="absolute right-0 top-full mt-2 w-32 bg-[#141414] border border-white/10 rounded-2xl p-1.5 shadow-2xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all z-50">
+          <button class="lang-btn w-full text-left px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-white/10 text-gray-300 hover:text-white flex items-center justify-between" data-lang="uz">
+            <span>O'zbek</span>
+            <span class="text-[10px] font-mono text-[#E04318] font-bold">O'z</span>
+          </button>
+          <button class="lang-btn w-full text-left px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-white/10 text-gray-300 hover:text-white flex items-center justify-between" data-lang="ru">
+            <span>Русский</span>
+            <span class="text-[10px] font-mono text-gray-400">Ру</span>
+          </button>
+          <button class="lang-btn w-full text-left px-3 py-1.5 rounded-xl text-xs font-medium hover:bg-white/10 text-gray-300 hover:text-white flex items-center justify-between" data-lang="en">
+            <span>English</span>
+            <span class="text-[10px] font-mono text-gray-400">En</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==========================================
+       2. HERO SECTION
+       Large 4-Line Display Headline + 3D Mars Planet + Astronaut Visual
+       ========================================== -->
+  <section class="relative pt-36 pb-16 sm:pt-44 sm:pb-24 overflow-hidden z-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1320px] mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        
+        <!-- ==================== LEFT COLUMN ==================== -->
+        <div class="lg:col-span-7 text-left z-20">
+          
+          <!-- Large, bold display typography broken into exactly 4 lines -->
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-[68px] font-sans font-black tracking-tight text-white leading-[1.05] mb-6" data-i18n="hero_headline">
+            AI yordamida <br>
+            kelajakni <br>
+            yaratishni <br>
+            o'rganish
+          </h1>
+
+          <!-- Subtitle: exact text, regular weight, max-w-xl -->
+          <p class="text-base sm:text-lg text-[#9E9EA7] leading-relaxed max-w-xl mb-9 font-normal font-sans" data-i18n="hero_subtitle">
+            Sun'iy intellekt, zamonaviy dasturlash va ilg'or texnologiyalarni 9–17 yoshli bolalar va o'smirlar uchun qiziqarli amaliyot hamda xalqaro standartlar asosida o'rgatamiz.
+          </p>
+
+          <!-- Buttons (Top & Bottom stacked pills) -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            
+            <!-- Top: Large red-orange pill (#E04318) -->
+            <a href="#lead-form-section" class="btn-orange-hero rounded-full text-base font-bold shadow-[0_0_35px_rgba(224,67,24,0.45)] hover:shadow-[0_0_55px_rgba(224,67,24,0.7)] py-4 px-8 text-center transition-all inline-flex items-center gap-2">
+              <span data-i18n="hero_cta_primary">Bepul maslahat uchun ro'yxatdan o'ting</span>
+            </a>
+
+            <!-- Dark pill button (bg-[#222222]) -->
+            <a href="#main-features" class="bg-[#222222] hover:bg-[#2a2a2a] text-white font-semibold px-7 py-4 rounded-full border border-white/5 inline-flex items-center gap-2 transition text-base shadow-md">
+              <span data-i18n="hero_cta_secondary">Kurslarni ko'rish</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- ==================== RIGHT COLUMN (3D VISUALS) ==================== -->
+        <div class="lg:col-span-5 relative flex items-center justify-center min-h-[460px] sm:min-h-[520px]">
+          
+          <div class="relative w-full max-w-[480px] aspect-square flex items-center justify-center">
+            
+            <!-- Realistic textured 3D Mars planet with warm orange glow/rim light (bottom-left offset) -->
+            <div class="mars-3d-sphere absolute -bottom-4 -left-6 sm:-bottom-8 sm:-left-10 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] rounded-full pointer-events-none z-0">
+              <!-- Atmospheric warm orange glow/rim lighting -->
+              <div class="mars-atmosphere-rim"></div>
+              
+              <!-- Craters -->
+              <div class="mars-crater w-14 h-10 top-12 left-12 rotate-12"></div>
+              <div class="mars-crater w-20 h-14 top-28 left-28 -rotate-6"></div>
+              <div class="mars-crater w-10 h-8 top-44 left-16"></div>
+              <div class="mars-crater w-24 h-16 bottom-14 left-24 rotate-12"></div>
+              <div class="mars-crater w-12 h-9 bottom-24 right-12"></div>
+
+              <div class="absolute inset-0 bg-gradient-to-tr from-black/75 via-transparent to-white/10 pointer-events-none"></div>
+            </div>
+
+            <!-- Uploaded 3D Astronaut PNG with Holograms (Foreground element with subtle antigravity float translateY -8px to 8px) -->
+            <div class="relative z-10 w-full flex items-center justify-center antigravity-float-subtle select-none">
+              <img 
+                src="assets/Noutbukli kosmonavt va gologrammalar.png" 
+                alt="MARS IT School 3D Astronaut with Laptop and Holograms" 
+                class="w-full max-w-[440px] sm:max-w-[480px] h-auto object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.9)] filter"
+                loading="eager"
+              />
+            </div>
+
+            <!-- Bottom-right corner: small dark chat pill: "Savolingiz bormi? Menga yozing 👋" with mini 3D robot avatar -->
+            <div class="floating-chat-bubble absolute -bottom-3 right-0 sm:right-2 z-20 flex items-center gap-3 px-4 py-2.5 rounded-full cursor-pointer hover:scale-105 transition-transform" onclick="document.getElementById('lead-form-section').scrollIntoView({behavior:'smooth'})">
+              <!-- Mini 3D Robot Avatar -->
+              <div class="relative w-9 h-9 rounded-full bg-gradient-to-tr from-[#E04318] via-amber-400 to-[#00F0FF] p-[1.5px] flex-shrink-0 shadow-[0_0_12px_rgba(224,67,24,0.4)]">
+                <div class="w-full h-full bg-[#141414] rounded-full flex items-center justify-center text-lg">
+                  🤖
+                </div>
+                <span class="absolute top-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#141414]"></span>
+              </div>
+              <!-- Text -->
+              <div class="text-left">
+                <p class="text-xs sm:text-sm font-semibold text-white leading-tight font-sans" data-i18n="hero_chat_bubble">
+                  Savolingiz bormi? Menga yozing 👋
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       4. "NEGA BIZ" SECTION (MATCH SCREENSHOT 5)
+       Two-column layout (mt-24 max-w-[1320px] mx-auto)
+       ========================================== -->
+  <section class="pt-8 pb-12 relative z-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1320px] mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        
+        <!-- Left Side: Badge "Nega biz" + Large Heading + CTA Button "Batafsil" -->
+        <div class="lg:col-span-7">
+          <span class="bg-gradient-to-r from-[#E04318] via-[#9B344E] to-[#512B6B] text-white text-xs font-semibold px-4 py-1.5 rounded-full inline-block mb-5 shadow-sm font-sans" data-i18n="why_us_badge">
+            Nega biz
+          </span>
+          <h2 class="text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight font-sans" data-i18n="why_us_title">
+            Nega MARS IT School'ni tanlashadi
+          </h2>
+          <a href="#lead-form-section" class="mt-8 bg-[#D9431A] hover:bg-[#E04318] text-white font-semibold px-8 py-4 rounded-full inline-block transition shadow-lg shadow-[#D9431A]/30 text-base" data-i18n="why_us_btn">
+            Batafsil
+          </a>
+        </div>
+
+        <!-- Right Side: Subtitle paragraph aligned middle/right -->
+        <div class="lg:col-span-5 lg:text-right">
+          <p class="text-gray-300 text-lg max-w-md ml-auto leading-relaxed font-sans" data-i18n="why_us_subtitle">
+            Biz bolaga o'rganish, rivojlanish va bilimini amalda qo'llash qiziqarli bo'ladigan muhit yaratamiz.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       MAIN STACKED HORIZONTAL CARDS
+       Dark Charcoal (#1A1A1A / #222222) with 1px solid rgba(255, 255, 255, 0.07)
+       ========================================== -->
+  <section id="main-features" class="py-6 pb-16 relative z-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-[1320px] mx-auto">
+
+      <!-- CARD 01: Mening kurslarim va Shaxsiy kabinet -->
+      <div class="stacked-card group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left (Text) -->
+          <div class="lg:col-span-7">
+            <h3 class="text-2xl sm:text-3xl font-sans font-bold text-white mb-3 group-hover:text-white transition-colors" data-i18n="card1_title">
+              Mening kurslarim va Shaxsiy kabinet
+            </h3>
+            <p class="text-base sm:text-lg text-[#9E9EA7] leading-relaxed font-sans" data-i18n="card1_desc">
+              Har bir modul va dars bo'yicha shaxsiy progress trekeri, o'zlashtirish foizi va darsni bir zumda davom ettirish tugmasi.
+            </p>
+          </div>
+
+          <!-- Middle (Number): font-mono #3A3F4D -> #E04318 on hover -->
+          <div class="lg:col-span-2 flex justify-start lg:justify-center">
+            <span class="card-number text-7xl sm:text-8xl">
+              01
+            </span>
+          </div>
+
+          <!-- Right (3D Badge) -->
+          <div class="lg:col-span-3 flex justify-start lg:justify-end">
+            <div class="badge-3d-container">
+              <div class="badge-3d-glow"></div>
+              
+              <!-- 3D Isometric Space Rocket Icon -->
+              <svg class="w-16 h-16 transform -rotate-12 drop-shadow-[0_10px_15px_rgba(224,67,24,0.5)]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="32" cy="36" rx="26" ry="10" stroke="rgba(224,67,24,0.4)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                <path d="M42 12C42 12 40 28 26 38L22 34C32 20 42 12 42 12Z" fill="url(#rocket_grad_1)"/>
+                <path d="M42 12C36 14 26 24 22 34L26 38C40 28 42 12 42 12Z" fill="url(#rocket_grad_2)"/>
+                <path d="M42 12C46 16 48 22 46 25L39 18C42 16 42 12 42 12Z" fill="#E04318"/>
+                <circle cx="35" cy="22" r="3.5" fill="#121212" stroke="#FFFFFF" stroke-width="1.2"/>
+                <circle cx="35" cy="22" r="1.5" fill="#00F0FF"/>
+                <path d="M22 34L14 36L18 30L22 34Z" fill="#E04318"/>
+                <path d="M26 38L30 46L24 42L26 38Z" fill="#E04318"/>
+                <path d="M20 38C17 41 15 48 18 52C22 55 24 48 24 42L20 38Z" fill="url(#fire_grad)"/>
+                <circle cx="19" cy="46" r="2" fill="#FFE500"/>
+                
+                <defs>
+                  <linearGradient id="rocket_grad_1" x1="22" y1="12" x2="42" y2="38" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FFFFFF"/>
+                    <stop offset="0.7" stop-color="#D1D5DB"/>
+                    <stop offset="1" stop-color="#9CA3AF"/>
+                  </linearGradient>
+                  <linearGradient id="rocket_grad_2" x1="22" y1="34" x2="42" y2="12" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E5E7EB"/>
+                    <stop offset="1" stop-color="#6B7280"/>
+                  </linearGradient>
+                  <linearGradient id="fire_grad" x1="20" y1="38" x2="18" y2="52" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FFE500"/>
+                    <stop offset="0.5" stop-color="#E04318"/>
+                    <stop offset="1" stop-color="rgba(224,67,24,0)"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- CARD 02: Eduverse video kutubxonasi -->
+      <div class="stacked-card group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left (Text) -->
+          <div class="lg:col-span-7">
+            <h3 class="text-2xl sm:text-3xl font-sans font-bold text-white mb-3 group-hover:text-white transition-colors" data-i18n="card2_title">
+              Eduverse video kutubxonasi
+            </h3>
+            <p class="text-base sm:text-lg text-[#9E9EA7] leading-relaxed font-sans" data-i18n="card2_desc">
+              Cheksiz qo'shimcha video kurslar kutubxonasi: HTML, CSS, Python, 3D Blender, C#, C++, Unity va sun'iy intellekt asoslari.
+            </p>
+          </div>
+
+          <!-- Middle (Number) -->
+          <div class="lg:col-span-2 flex justify-start lg:justify-center">
+            <span class="card-number text-7xl sm:text-8xl">
+              02
+            </span>
+          </div>
+
+          <!-- Right (3D Badge) -->
+          <div class="lg:col-span-3 flex justify-start lg:justify-end">
+            <div class="badge-3d-container">
+              <div class="badge-3d-glow"></div>
+              
+              <!-- 3D Holographic Cube & Media Player Icon -->
+              <svg class="w-16 h-16 drop-shadow-[0_10px_15px_rgba(224,67,24,0.5)]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 14L48 23L32 32L16 23L32 14Z" fill="url(#cube_top)"/>
+                <path d="M16 23L32 32V50L16 41V23Z" fill="url(#cube_left)"/>
+                <path d="M32 32L48 23V41L32 50V32Z" fill="url(#cube_right)"/>
+                <polygon points="30,28 38,32 30,36" fill="#FFFFFF"/>
+                <polygon points="30,28 38,32 30,36" stroke="#E04318" stroke-width="1.5"/>
+                <path d="M32 14L48 23V41L32 50L16 41V23L32 14Z" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+                <circle cx="32" cy="14" r="1.5" fill="#E04318"/>
+                <circle cx="48" cy="23" r="1.5" fill="#E04318"/>
+                <circle cx="16" cy="23" r="1.5" fill="#E04318"/>
+
+                <defs>
+                  <linearGradient id="cube_top" x1="16" y1="14" x2="48" y2="32" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF6B4A"/>
+                    <stop offset="1" stop-color="#E04318"/>
+                  </linearGradient>
+                  <linearGradient id="cube_left" x1="16" y1="23" x2="32" y2="50" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#99240D"/>
+                    <stop offset="1" stop-color="#551408"/>
+                  </linearGradient>
+                  <linearGradient id="cube_right" x1="32" y1="32" x2="48" y2="50" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D93918"/>
+                    <stop offset="1" stop-color="#801C09"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- CARD 03: MarsCode — FAANG darajasidagi keyslar -->
+      <div class="stacked-card group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left (Text) -->
+          <div class="lg:col-span-7">
+            <h3 class="text-2xl sm:text-3xl font-sans font-bold text-white mb-3 group-hover:text-white transition-colors" data-i18n="card3_title">
+              MarsCode — FAANG darajasidagi keyslar
+            </h3>
+            <p class="text-base sm:text-lg text-[#9E9EA7] leading-relaxed font-sans" data-i18n="card3_desc">
+              Google, Amazon va Netflix intervyu topshiriqlari andozasida tuzilgan real dasturlash amaliyoti va kodni avtomatik tekshiruvchi platforma.
+            </p>
+          </div>
+
+          <!-- Middle (Number) -->
+          <div class="lg:col-span-2 flex justify-start lg:justify-center">
+            <span class="card-number text-7xl sm:text-8xl">
+              03
+            </span>
+          </div>
+
+          <!-- Right (3D Badge) -->
+          <div class="lg:col-span-3 flex justify-start lg:justify-end">
+            <div class="badge-3d-container">
+              <div class="badge-3d-glow"></div>
+              
+              <!-- 3D Code Terminal Brackets Icon -->
+              <svg class="w-16 h-16 drop-shadow-[0_10px_15px_rgba(224,67,24,0.5)]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 10L49 20V44L32 54L15 44V20L32 10Z" fill="#141414" stroke="#E04318" stroke-width="1.8"/>
+                <path d="M26 24L19 32L26 40" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M38 24L45 32L38 40" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M34 22L30 42" stroke="#E04318" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="32" cy="32" r="3" fill="#FFE500" filter="blur(1px)"/>
+              </svg>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- CARD 04: RPG Gamifikatsiya, Streek va Coinlar -->
+      <div class="stacked-card group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left (Text) -->
+          <div class="lg:col-span-7">
+            <h3 class="text-2xl sm:text-3xl font-sans font-bold text-white mb-3 group-hover:text-white transition-colors" data-i18n="card4_title">
+              RPG Gamifikatsiya, Streek va Coinlar
+            </h3>
+            <p class="text-base sm:text-lg text-[#9E9EA7] leading-relaxed font-sans" data-i18n="card4_desc">
+              Darsga qatnashish, uyga vazifa va faollik uchun SPACE coinlari, olovli 7 kunlik streek, umumiy turnir reytingi va qiziqarli mini-o'yinlar.
+            </p>
+          </div>
+
+          <!-- Middle (Number) -->
+          <div class="lg:col-span-2 flex justify-start lg:justify-center">
+            <span class="card-number text-7xl sm:text-8xl">
+              04
+            </span>
+          </div>
+
+          <!-- Right (3D Badge) -->
+          <div class="lg:col-span-3 flex justify-start lg:justify-end">
+            <div class="badge-3d-container">
+              <div class="badge-3d-glow"></div>
+              
+              <!-- 3D Golden Fire Coin / Trophy Icon -->
+              <svg class="w-16 h-16 drop-shadow-[0_10px_15px_rgba(224,67,24,0.5)]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="32" cy="32" rx="19" ry="19" fill="url(#coin_front)"/>
+                <ellipse cx="32" cy="32" rx="16" ry="16" fill="url(#coin_inner)" stroke="#FFE873" stroke-width="1.5"/>
+                <path d="M32 18C34 24 38 27 41 27C37 31 38 37 32 44C26 37 27 31 23 27C26 27 30 24 32 18Z" fill="#E04318"/>
+                <path d="M32 26C33 29 35 31 37 31C35 33 35 36 32 40C29 36 29 33 27 31C29 31 31 29 32 26Z" fill="#FFE500"/>
+                
+                <defs>
+                  <linearGradient id="coin_front" x1="13" y1="13" x2="51" y2="51" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FFE873"/>
+                    <stop offset="0.5" stop-color="#F59E0B"/>
+                    <stop offset="1" stop-color="#B45309"/>
+                  </linearGradient>
+                  <linearGradient id="coin_inner" x1="16" y1="16" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D97706"/>
+                    <stop offset="1" stop-color="#78350F"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- CARD 05: Ota-onalar uchun shaffof onlayn to'lov -->
+      <div class="stacked-card group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left (Text) -->
+          <div class="lg:col-span-7">
+            <h3 class="text-2xl sm:text-3xl font-sans font-bold text-white mb-3 group-hover:text-white transition-colors" data-i18n="card5_title">
+              Ota-onalar uchun shaffof onlayn to'lov
+            </h3>
+            <p class="text-base sm:text-lg text-[#9E9EA7] leading-relaxed font-sans" data-i18n="card5_desc">
+              Ota-onalar uchun shaffof kabinet: to'lovlar tarixi, qarzdorlik nazorati va Click, Payme orqali 1 daqiqada xavfsiz to'lash imkoniyati.
+            </p>
+          </div>
+
+          <!-- Middle (Number) -->
+          <div class="lg:col-span-2 flex justify-start lg:justify-center">
+            <span class="card-number text-7xl sm:text-8xl">
+              05
+            </span>
+          </div>
+
+          <!-- Right (3D Badge) -->
+          <div class="lg:col-span-3 flex justify-start lg:justify-end">
+            <div class="badge-3d-container">
+              <div class="badge-3d-glow"></div>
+              
+              <!-- 3D Security Shield & Payment Card Icon -->
+              <svg class="w-16 h-16 drop-shadow-[0_10px_15px_rgba(224,67,24,0.5)]" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="14" y="24" width="36" height="22" rx="4" transform="rotate(-6 14 24)" fill="url(#card_bg)" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+                <rect x="15" y="30" width="34" height="4" transform="rotate(-6 15 30)" fill="#121212"/>
+                <rect x="18" y="38" width="6" height="5" rx="1" transform="rotate(-6 18 38)" fill="#FFE500"/>
+                <path d="M38 18C44 20 48 20 48 20C48 30 43 38 38 42C33 38 28 30 28 20C28 20 32 20 38 18Z" fill="url(#shield_bg)" stroke="#FFFFFF" stroke-width="1.5"/>
+                <path d="M34 29L37 32L43 25" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <defs>
+                  <linearGradient id="card_bg" x1="14" y1="24" x2="50" y2="46" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF6B4A"/>
+                    <stop offset="1" stop-color="#E04318"/>
+                  </linearGradient>
+                  <linearGradient id="shield_bg" x1="28" y1="18" x2="48" y2="42" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E04318"/>
+                    <stop offset="1" stop-color="#99240D"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       5. "MARSHUB" SECTION (MATCH SCREENSHOT 3 - NEWLY ADDED)
+       Wrapper: max-w-[1320px] mx-auto my-20 rounded-[32px] bg-[#181818] border border-white/[0.07] p-8 lg:p-14
+       ========================================== -->
+  <section id="marshub" class="py-12 relative z-10 px-4 sm:px-6">
+    <div class="max-w-[1320px] mx-auto rounded-[32px] bg-[#181818] border border-white/[0.07] p-8 lg:p-14 relative overflow-hidden shadow-2xl">
+      
+      <!-- Subtle Ambient Glow inside Wrapper (Top-right warm bronze/orange radial gradient) -->
+      <div class="absolute inset-0 pointer-events-none marshub-glow"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+        
+        <!-- Left Column (5 cols) -->
+        <div class="lg:col-span-5 text-left">
+          
+          <!-- Outlined Badge -->
+          <div class="border border-[#F27A24]/50 text-[#F27A24] text-xs font-mono font-semibold px-4 py-1.5 rounded-full inline-block mb-6" data-i18n="marshub_badge">
+            MarsHub
+          </div>
+
+          <!-- Heading -->
+          <h2 class="text-3xl lg:text-[40px] font-bold text-white leading-[1.15] mb-6 font-sans" data-i18n="marshub_title">
+            MarsHub — o'quvchilar uchun xavfsiz sun'iy intellektli onlayn muhit
+          </h2>
+
+          <!-- Description -->
+          <p class="text-gray-300 text-[15px] leading-relaxed mb-8 font-sans" data-i18n="marshub_desc">
+            Bola nima qilmoqchi ekanini yozadi — AI-agent sayt yoki o'yinni yig'ib, o'z manzilida joylaydi. O'zbekistondagi barcha o'quvchilar uchun bepul, Telegram orqali kirish.
+          </p>
+
+          <!-- Stat Line -->
+          <div class="font-mono text-[#F27A24] text-sm font-semibold mb-8 flex items-center gap-2" data-i18n="marshub_stat">
+            826 nafar bola yaratgan 935 ta sayt
+          </div>
+
+          <!-- CTA Button -->
+          <a href="https://marshub.uz" target="_blank" rel="noopener noreferrer" class="bg-[#F27A24] hover:bg-[#ff8833] text-black font-bold px-9 py-4 rounded-full text-[15px] transition inline-block shadow-lg shadow-[#F27A24]/20 hover:scale-[1.02]" data-i18n="marshub_cta">
+            Sinab ko'rish
+          </a>
+
+        </div>
+
+        <!-- Right Column (7 cols) -->
+        <div class="lg:col-span-7">
+          
+          <!-- Top Grid of Feature Mini-Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            
+            <!-- Card 1: AI-agent -->
+            <div class="marshub-mini-card bg-[#222222]/90 border border-white/5 rounded-2xl p-5">
+              <div class="font-mono text-[#F27A24] text-sm font-semibold mb-2" data-i18n="marshub_card1_title">
+                AI-agent
+              </div>
+              <p class="text-gray-200 text-sm leading-snug font-sans" data-i18n="marshub_card1_desc">
+                Tavsif bo'yicha kod yozadi va xatolarini o'zi tuzatadi
+              </p>
+            </div>
+
+            <!-- Card 2: O'z sayting -->
+            <div class="marshub-mini-card bg-[#222222]/90 border border-white/5 rounded-2xl p-5">
+              <div class="font-mono text-[#F27A24] text-sm font-semibold mb-2" data-i18n="marshub_card2_title">
+                O'z sayting
+              </div>
+              <p class="text-gray-200 text-sm leading-snug font-sans" data-i18n="marshub_card2_desc">
+                Darhol internetda: nomi.marshub.uz
+              </p>
+            </div>
+
+            <!-- Card 3: Kurslar va o'yinlar (spans 1 col on the left row below) -->
+            <div class="marshub-mini-card bg-[#222222]/90 border border-white/5 rounded-2xl p-5">
+              <div class="font-mono text-[#F27A24] text-sm font-semibold mb-2" data-i18n="marshub_card3_title">
+                Kurslar va o'yinlar
+              </div>
+              <p class="text-gray-200 text-sm leading-snug font-sans" data-i18n="marshub_card3_desc">
+                Dasturlash va sun'iy intellekt o'z sur'atingda
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Bottom Interactive Terminal Box -->
+          <div class="bg-[#0D0D0D] border border-white/10 rounded-2xl overflow-hidden shadow-inner font-mono text-sm">
+            
+            <!-- Terminal Header -->
+            <div class="px-4 py-3 border-b border-white/5 flex items-center gap-2 bg-[#141414]">
+              <div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-white/20"></div>
+              <span class="font-mono text-xs text-gray-500 ml-2">marshub</span>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="p-5 font-mono text-sm space-y-3">
+              <div>
+                <span class="text-emerald-400">&gt;</span> <span id="marshub-terminal-cmd" class="text-gray-200">onam uchun sayt qil</span>
+              </div>
+              <div id="marshub-terminal-out">
+                <span class="text-emerald-400">✓</span> <span class="text-gray-200">sayt chop etildi:</span> <span class="text-amber-400 underline decoration-amber-400/50">mama.marshub.uz</span><span class="inline-block w-2 h-4 bg-white align-middle ml-0.5 animate-pulse"></span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       VIDEO TESTIMONIALS SECTION ("OTA-ONALAR FIKRLARI")
+       Infinite Auto-Scrolling Video Carousel (Marquee)
+       ========================================== -->
+  <section id="testimonials" class="py-16 md:py-24 relative z-10 border-t border-white/5 overflow-hidden">
+    
+    <!-- Section Header (Left-aligned with Slider Controls) -->
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <span class="inline-block px-4 py-1 rounded-full text-xs font-mono font-bold bg-[#E04318]/10 text-[#E04318] border border-[#E04318]/30 mb-3">
+          💬 Video Sharhlar
+        </span>
+        <h2 class="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight mb-3" data-i18n="testimonials_title">
+          Ota-onalar MARS IT School haqida nima deydi
+        </h2>
+        <p class="text-[#9E9EA7] text-base sm:text-lg max-w-2xl leading-relaxed font-sans" data-i18n="testimonials_subtitle">
+          O'quvchilarimiz ota-onalarining samimiy fikrlari va natijalari
+        </p>
+      </div>
+
+      <!-- Arrow Controls -->
+      <div class="flex items-center gap-3">
+        <button id="video-slider-prev" class="w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-[#E04318] hover:border-transparent text-white flex items-center justify-center transition-all cursor-pointer shadow-lg group" aria-label="Oldingisi">
+          <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button id="video-slider-next" class="w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-[#E04318] hover:border-transparent text-white flex items-center justify-center transition-all cursor-pointer shadow-lg group" aria-label="Keyingisi">
+          <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Infinite Auto-Scrolling Video Marquee Track -->
+    <div class="video-marquee-wrapper">
+      <div class="video-marquee-track">
+
+        <!-- CARD 1: Dilafruz Maksumova -->
+        <div class="video-card-container group cursor-pointer" data-name="Dilafruz Maksumova" data-video="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1">
+          <div class="video-card-poster">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Dilafruz Maksumova" loading="lazy">
+            <div class="video-card-gradient"></div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div class="video-play-btn">
+                <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-medium text-white/80 z-10 font-mono">
+              <span class="px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-[11px]">
+                ⏱ 1:42
+              </span>
+              <span class="px-2.5 py-1 rounded-full bg-[#E04318]/20 border border-[#E04318]/40 text-[#E04318] text-[11px] font-bold">
+                HD Video
+              </span>
+            </div>
+          </div>
+          <div class="mt-3.5 px-1">
+            <h4 class="text-white text-lg font-bold font-sans leading-tight group-hover:text-[#E04318] transition-colors">
+              Dilafruz Maksumova
+            </h4>
+            <p class="text-[#9E9EA7] text-sm mt-0.5 font-medium font-sans" data-i18n="parent_role">
+              Ota-ona
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 2: Gavkhar Mirzarakhimova -->
+        <div class="video-card-container group cursor-pointer" data-name="Gavkhar Mirzarakhimova" data-video="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1">
+          <div class="video-card-poster">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Gavkhar Mirzarakhimova" loading="lazy">
+            <div class="video-card-gradient"></div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div class="video-play-btn">
+                <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-medium text-white/80 z-10 font-mono">
+              <span class="px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-[11px]">
+                ⏱ 2:15
+              </span>
+              <span class="px-2.5 py-1 rounded-full bg-[#E04318]/20 border border-[#E04318]/40 text-[#E04318] text-[11px] font-bold">
+                HD Video
+              </span>
+            </div>
+          </div>
+          <div class="mt-3.5 px-1">
+            <h4 class="text-white text-lg font-bold font-sans leading-tight group-hover:text-[#E04318] transition-colors">
+              Gavkhar Mirzarakhimova
+            </h4>
+            <p class="text-[#9E9EA7] text-sm mt-0.5 font-medium font-sans" data-i18n="parent_role">
+              Ota-ona
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 3: Dilshod Sharipov -->
+        <div class="video-card-container group cursor-pointer" data-name="Dilshod Sharipov" data-video="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1">
+          <div class="video-card-poster">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Dilshod Sharipov" loading="lazy">
+            <div class="video-card-gradient"></div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div class="video-play-btn">
+                <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-medium text-white/80 z-10 font-mono">
+              <span class="px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-[11px]">
+                ⏱ 1:58
+              </span>
+              <span class="px-2.5 py-1 rounded-full bg-[#E04318]/20 border border-[#E04318]/40 text-[#E04318] text-[11px] font-bold">
+                HD Video
+              </span>
+            </div>
+          </div>
+          <div class="mt-3.5 px-1">
+            <h4 class="text-white text-lg font-bold font-sans leading-tight group-hover:text-[#E04318] transition-colors">
+              Dilshod Sharipov
+            </h4>
+            <p class="text-[#9E9EA7] text-sm mt-0.5 font-medium font-sans" data-i18n="parent_role">
+              Ota-ona
+            </p>
+          </div>
+        </div>
+
+        <!-- CARD 4: Gulnoza Karimova -->
+        <div class="video-card-container group cursor-pointer" data-name="Gulnoza Karimova" data-video="https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1">
+          <div class="video-card-poster">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Gulnoza Karimova" loading="lazy">
+            <div class="video-card-gradient"></div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div class="video-play-btn">
+                <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-medium text-white/80 z-10 font-mono">
+              <span class="px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-[11px]">
+                ⏱ 2:30
+              </span>
+              <span class="px-2.5 py-1 rounded-full bg-[#E04318]/20 border border-[#E04318]/40 text-[#E04318] text-[11px] font-bold">
+                HD Video
+              </span>
+            </div>
+          </div>
+          <div class="mt-3.5 px-1">
+            <h4 class="text-white text-lg font-bold font-sans leading-tight group-hover:text-[#E04318] transition-colors">
+              Gulnoza Karimova
+            </h4>
+            <p class="text-[#9E9EA7] text-sm mt-0.5 font-medium font-sans" data-i18n="parent_role">
+              Ota-ona
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       MARS SHOP SECTION
+       ========================================== -->
+  <section id="shop" class="py-16 md:py-24 relative z-10 border-t border-white/5">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block px-4 py-1 rounded-full text-xs font-mono font-bold bg-[#E04318]/10 text-[#E04318] border border-[#E04318]/30 mb-3" data-i18n="shop_badge">
+          🎁 Sovg'alar do'koni
+        </span>
+        <h2 class="font-sans font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-4" data-i18n="shop_title">
+          MARS Shop — ballarni sovg'alarga almashtiring
+        </h2>
+        <p class="text-[#9E9EA7] text-base sm:text-lg font-sans" data-i18n="shop_subtitle">
+          Darslarga qatnashing, kod yozing, coinlar to'plang va ularni haqiqiy gadjetlarga almashtiring!
+        </p>
+      </div>
+
+      <!-- Gifts Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-12">
+        
+        <!-- Gift 1: Яндекс Алиса -->
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-[#E04318]/40 transition-all">
+          <div>
+            <div class="h-36 rounded-xl overflow-hidden bg-black/40 mb-3 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1543512214-318c7553f230?auto=format&fit=crop&w=300&q=80" alt="Yandex Alisa" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-sans font-bold text-white text-sm mb-1">Яндекс Алиса</h4>
+            <p class="text-xs text-[#9E9EA7] mb-3 font-sans">Aqlli ovozli yordamchi va musiqa karnayi</p>
+          </div>
+          <div>
+            <div class="flex items-center justify-between text-xs mb-2">
+              <span class="text-gray-400">Narxi:</span>
+              <span class="font-mono font-bold text-[#E04318]">2 490 coin</span>
+            </div>
+            <button data-name="Яндекс Алиса" data-cost="2490" data-icon="🔊" class="shop-buy-btn w-full py-2 rounded-xl bg-white/5 hover:bg-[#E04318] text-white font-bold text-xs transition-colors">
+              Almashtirish
+            </button>
+          </div>
+        </div>
+
+        <!-- Gift 2: Смарт-часы -->
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-[#E04318]/40 transition-all">
+          <div>
+            <div class="h-36 rounded-xl overflow-hidden bg-black/40 mb-3 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=300&q=80" alt="Smart Watch" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-sans font-bold text-white text-sm mb-1">Смарт-часы</h4>
+            <p class="text-xs text-[#9E9EA7] mb-3 font-sans">Rangli ekranli fitnes-treker va qadam o'lchagich</p>
+          </div>
+          <div>
+            <div class="flex items-center justify-between text-xs mb-2">
+              <span class="text-gray-400">Narxi:</span>
+              <span class="font-mono font-bold text-[#E04318]">949 coin</span>
+            </div>
+            <button data-name="Смарт-часы" data-cost="949" data-icon="⌚" class="shop-buy-btn w-full py-2 rounded-xl bg-white/5 hover:bg-[#E04318] text-white font-bold text-xs transition-colors">
+              Almashtirish
+            </button>
+          </div>
+        </div>
+
+        <!-- Gift 3: Беспроводные наушники -->
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-[#E04318]/40 transition-all">
+          <div>
+            <div class="h-36 rounded-xl overflow-hidden bg-black/40 mb-3 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=300&q=80" alt="Headphones" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-sans font-bold text-white text-sm mb-1">Simsiz quloqchinlar</h4>
+            <p class="text-xs text-[#9E9EA7] mb-3 font-sans">TWS simsiz quloqchin va keys</p>
+          </div>
+          <div>
+            <div class="flex items-center justify-between text-xs mb-2">
+              <span class="text-gray-400">Narxi:</span>
+              <span class="font-mono font-bold text-[#E04318]">599 coin</span>
+            </div>
+            <button data-name="Simsiz quloqchinlar" data-cost="599" data-icon="🎧" class="shop-buy-btn w-full py-2 rounded-xl bg-white/5 hover:bg-[#E04318] text-white font-bold text-xs transition-colors">
+              Almashtirish
+            </button>
+          </div>
+        </div>
+
+        <!-- Gift 4: Клавиатура с подсветкой -->
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-[#E04318]/40 transition-all">
+          <div>
+            <div class="h-36 rounded-xl overflow-hidden bg-black/40 mb-3 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=300&q=80" alt="RGB Keyboard" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-sans font-bold text-white text-sm mb-1">RGB Klaviaturasi</h4>
+            <p class="text-xs text-[#9E9EA7] mb-3 font-sans">Mexanik o'yin klaviaturasi</p>
+          </div>
+          <div>
+            <div class="flex items-center justify-between text-xs mb-2">
+              <span class="text-gray-400">Narxi:</span>
+              <span class="font-mono font-bold text-[#E04318]">850 coin</span>
+            </div>
+            <button data-name="RGB Klaviaturasi" data-cost="850" data-icon="⌨️" class="shop-buy-btn w-full py-2 rounded-xl bg-white/5 hover:bg-[#E04318] text-white font-bold text-xs transition-colors">
+              Almashtirish
+            </button>
+          </div>
+        </div>
+
+        <!-- Gift 5: Игровая мышь -->
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-4 flex flex-col justify-between hover:border-[#E04318]/40 transition-all">
+          <div>
+            <div class="h-36 rounded-xl overflow-hidden bg-black/40 mb-3 flex items-center justify-center">
+              <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=300&q=80" alt="Gaming Mouse" class="w-full h-full object-cover">
+            </div>
+            <h4 class="font-sans font-bold text-white text-sm mb-1">O'yin sichqonchasi</h4>
+            <p class="text-xs text-[#9E9EA7] mb-3 font-sans">Tezkor optik sensorli o'yin sichqonchasi</p>
+          </div>
+          <div>
+            <div class="flex items-center justify-between text-xs mb-2">
+              <span class="text-gray-400">Narxi:</span>
+              <span class="font-mono font-bold text-[#E04318]">399 coin</span>
+            </div>
+            <button data-name="O'yin sichqonchasi" data-cost="399" data-icon="🖱️" class="shop-buy-btn w-full py-2 rounded-xl bg-white/5 hover:bg-[#E04318] text-white font-bold text-xs transition-colors">
+              Almashtirish
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       BRANCHES SECTION
+       ========================================== -->
+  <section id="branches" class="py-16 md:py-24 relative z-10 border-t border-white/5">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="inline-block px-4 py-1 rounded-full text-xs font-mono font-bold bg-[#E04318]/10 text-[#E04318] border border-[#E04318]/30 mb-3">
+          📍 Lokatsiyalar
+        </span>
+        <h2 class="font-sans font-extrabold text-3xl sm:text-4xl text-white mb-3">
+          Toshkentdagi 6 ta zamonaviy filial
+        </h2>
+        <p class="text-[#9E9EA7] text-sm sm:text-base font-sans">
+          Har bir filialimiz zamonaviy kompyuter sinflari, robototexnika laboratoriyalari va qulay dam olish zonalari bilan jihozlangan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-6 hover:border-[#E04318]/40 transition-all">
+          <div class="font-mono text-xs font-bold text-[#E04318] mb-1">BOSH KAMPUS</div>
+          <h4 class="font-sans font-bold text-lg text-white mb-2">Tinchlik filiali</h4>
+          <p class="text-xs text-[#9E9EA7] mb-4 font-sans">Shayxontohur tumani, Beruniy ko'chasi, 3A-uy. Metro: Tinchlik.</p>
+          <div class="text-xs font-mono text-gray-300">Mo'ljal: Tinchlik metrosi yonida</div>
+        </div>
+
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-6 hover:border-[#E04318]/40 transition-all">
+          <div class="font-mono text-xs font-bold text-[#E04318] mb-1">MEGA PLANET</div>
+          <h4 class="font-sans font-bold text-lg text-white mb-2">Yunusobod filiali</h4>
+          <p class="text-xs text-[#9E9EA7] mb-4 font-sans">Yunusobod tumani, Ahmad Donish ko'chasi. Mega Planet majmuasi.</p>
+          <div class="text-xs font-mono text-gray-300">Mo'ljal: Mega Planet 3-qavat</div>
+        </div>
+
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-6 hover:border-[#E04318]/40 transition-all">
+          <div class="font-mono text-xs font-bold text-[#E04318] mb-1">PARUS</div>
+          <h4 class="font-sans font-bold text-lg text-white mb-2">Chilonzor filiali</h4>
+          <p class="text-xs text-[#9E9EA7] mb-4 font-sans">Chilonzor tumani, Qatortol ko'chasi. Parus ko'ngilochar markazi.</p>
+          <div class="text-xs font-mono text-gray-300">Mo'ljal: Parus savdo markazi</div>
+        </div>
+
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-6 hover:border-[#E04318]/40 transition-all">
+          <div class="font-mono text-xs font-bold text-[#E04318] mb-1">DEPO MALL</div>
+          <h4 class="font-sans font-bold text-lg text-white mb-2">Sergeli filiali</h4>
+          <p class="text-xs text-[#9E9EA7] mb-4 font-sans">Sergeli tumani, Yangi Sergeli ko'chasi. Depo Mall majmuasi.</p>
+          <div class="text-xs font-mono text-gray-300">Mo'ljal: Depo Mall 2-qavat</div>
+        </div>
+
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-6 hover:border-[#E04318]/40 transition-all">
+          <div class="font-mono text-xs font-bold text-[#E04318] mb-1">METRO BUYUK IPAK YO'LI</div>
+          <h4 class="font-sans font-bold text-lg text-white mb-2">Buyuk Ipak Yo'li filiali</h4>
+          <p class="text-xs text-[#9E9EA7] mb-4 font-sans">Mirzo Ulug'bek tumani, Buyuk Ipak Yo'li ko'chasi, 45-uy.</p>
+          <div class="text-xs font-mono text-gray-300">Mo'ljal: Maksim Gorkiy metrosi</div>
+        </div>
+
+        <div class="bg-[#1A1A1A] border border-white/5 rounded-2xl p-6 hover:border-[#E04318]/40 transition-all">
+          <div class="font-mono text-xs font-bold text-[#E04318] mb-1">AMIR TEMUR KO'CHASI</div>
+          <h4 class="font-sans font-bold text-lg text-white mb-2">Minor filiali</h4>
+          <p class="text-xs text-[#9E9EA7] mb-4 font-sans">Yunusobod tumani, Amir Temur shoh ko'chasi, 88-uy. Metro: Minor.</p>
+          <div class="text-xs font-mono text-gray-300">Mo'ljal: Minor masjidi ro'parasi</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       LEAD GENERATION / APPLICATION FORM
+       ========================================== -->
+  <section id="lead-form-section" class="py-16 md:py-24 relative z-10 border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-[#1A1A1A] border border-white/5 rounded-[28px] p-8 sm:p-12 shadow-2xl relative">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="inline-block px-4 py-1 rounded-full text-xs font-mono font-bold bg-[#E04318]/10 text-[#E04318] border border-[#E04318]/30 mb-3" data-i18n="form_badge">
+            Bepul maslahat
+          </span>
+          <h2 class="font-sans font-extrabold text-2xl sm:text-4xl text-white mb-2" data-i18n="form_title">
+            MARS IT School bilan o'qishni boshlang
+          </h2>
+          <p class="text-[#9E9EA7] text-sm sm:text-base font-sans" data-i18n="form_desc">
+            Ariza qoldiring, biz sizga platforma haqida batafsil ma'lumot beramiz va farzandingizga mos kursni tanlaymiz.
+          </p>
+        </div>
+
+        <form id="lead-gen-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2 font-sans" data-i18n="form_name_label">Ism *</label>
+              <input type="text" id="lead-name" required placeholder="Sardor" class="w-full bg-[#121212] text-white text-sm px-4 py-3.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#E04318] transition-colors font-sans">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2 font-sans" data-i18n="form_surname_label">Familiya *</label>
+              <input type="text" id="lead-surname" required placeholder="Alimov" class="w-full bg-[#121212] text-white text-sm px-4 py-3.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#E04318] transition-colors font-sans">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2 font-sans" data-i18n="form_phone_label">Telefon raqami *</label>
+              <input type="tel" id="lead-phone" required placeholder="+998 (__) ___-__-__" class="w-full bg-[#121212] text-white font-mono text-sm px-4 py-3.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#E04318] transition-colors">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2 font-sans" data-i18n="form_branch_label">Qulay filial</label>
+              <select id="lead-branch" class="w-full bg-[#121212] text-white text-sm px-4 py-3.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#E04318] transition-colors font-sans">
+                <option value="Tinchlik">Tinchlik (Bosh kampus)</option>
+                <option value="Yunusobod">Yunusobod (Mega Planet)</option>
+                <option value="Chilonzor">Chilonzor (Parus)</option>
+                <option value="Sergeli">Sergeli (Depo Mall)</option>
+                <option value="Buyuk Ipak Yo'li">Buyuk Ipak Yo'li</option>
+                <option value="Minor">Minor (Amir Temur)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full btn-orange-hero py-4 text-base font-bold rounded-xl mt-4 cursor-pointer font-sans">
+            <span data-i18n="form_btn">Ariza yuborish / Bepul konsultatsiya</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       6. FOOTER SECTION (MATCH SCREENSHOT 1 - TRANSPARENT/DARK BLENDED STYLE)
+       Background: bg-[#121212]/90 backdrop-blur-md border-t border-white/[0.06] pt-16 pb-8 text-white
+       5-Column Grid + Bottom Copyright Bar
+       ========================================== -->
+  <footer id="contacts" class="relative z-10 bg-[#121212]/90 backdrop-blur-md border-t border-white/[0.06] pt-16 pb-8 text-white font-sans">
+    
+    <!-- 5-Column Main Grid -->
+    <div class="max-w-[1320px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14">
+      
+      <!-- Column 1 (Brand) -->
+      <div class="lg:col-span-1">
+        <a href="#" class="flex items-center text-3xl font-extrabold tracking-tight text-white group select-none font-sans">
+          <span>mars</span><span class="inline-block w-2.5 h-2.5 rounded-full border-2 border-[#E04318] ml-0.5 -mt-3.5 group-hover:bg-[#E04318] transition-colors"></span>
+        </a>
+        <p class="text-gray-400 text-sm mt-4 leading-relaxed font-sans" data-i18n="footer_desc">
+          Bolalar va o'smirlar uchun zamonaviy dasturlash maktabi
+        </p>
+        <!-- Social Icons: 3 circular dark glass buttons (w-11 h-11) -->
+        <div class="flex gap-3 mt-6">
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-white/[0.06] hover:bg-white/10 flex items-center justify-center transition border border-white/5 text-gray-300 hover:text-white" aria-label="Instagram">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <!-- Telegram -->
+          <a href="https://t.me/marsit_uz" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-white/[0.06] hover:bg-white/10 flex items-center justify-center transition border border-white/5 text-gray-300 hover:text-white" aria-label="Telegram">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+          </a>
+          <!-- YouTube -->
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-full bg-white/[0.06] hover:bg-white/10 flex items-center justify-center transition border border-white/5 text-gray-300 hover:text-white" aria-label="YouTube">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2 (TA'LIM) -->
+      <div>
+        <div class="font-mono text-xs uppercase tracking-wider text-gray-400 mb-5 font-semibold">
+          TA'LIM
+        </div>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="#courses" class="text-white hover:text-[#E04318] transition">Kurslar</a></li>
+          <li class="pl-2.5 border-l border-white/10 space-y-1.5 my-2">
+            <a href="#courses" class="text-gray-400 text-xs block hover:text-white transition">AI Kids · 9–11 yosh</a>
+            <a href="#courses" class="text-gray-400 text-xs block hover:text-white transition">AI Pilot · 12–17 yosh</a>
+          </li>
+          <li><a href="#main-features" class="text-gray-400 hover:text-white transition">Metodika</a></li>
+          <li><a href="#main-features" class="text-gray-400 hover:text-white transition">SPACE</a></li>
+          <li><a href="#marshub" class="text-gray-400 hover:text-[#F27A24] transition">MarsHub</a></li>
+          <li><a href="#lead-form-section" class="text-gray-400 hover:text-white transition">Kursni tanlash</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 (MAKTAB HAQIDA) -->
+      <div>
+        <div class="font-mono text-xs uppercase tracking-wider text-gray-400 mb-5 font-semibold">
+          MAKTAB HAQIDA
+        </div>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="#main-features" class="hover:text-white transition">Maktab haqida</a></li>
+          <li><a href="#main-features" class="hover:text-white transition">Tarix va missiya</a></li>
+          <li><a href="#main-features" class="hover:text-white transition">Jamoa</a></li>
+          <li><a href="#main-features" class="hover:text-white transition">Yangiliklar va tadbirlar</a></li>
+          <li><a href="#main-features" class="hover:text-white transition">Vakansiyalar</a></li>
+          <li><a href="#main-features" class="hover:text-white transition">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 (FILIALLAR) -->
+      <div>
+        <div class="font-mono text-xs uppercase tracking-wider text-gray-400 mb-5 font-semibold">
+          FILIALLAR
+        </div>
+        <ul class="space-y-2.5 text-sm text-gray-400">
+          <li><a href="#branches" class="hover:text-[#E04318] transition">Tinchlik</a></li>
+          <li><a href="#branches" class="hover:text-[#E04318] transition">Yunusobod</a></li>
+          <li><a href="#branches" class="hover:text-[#E04318] transition">Chilonzor</a></li>
+          <li><a href="#branches" class="hover:text-[#E04318] transition">Sergeli</a></li>
+          <li><a href="#branches" class="hover:text-[#E04318] transition">Buyuk Ipak yo'li</a></li>
+          <li><a href="#branches" class="hover:text-[#E04318] transition">Minor</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 5 (KONTAKTLAR) -->
+      <div>
+        <div class="font-mono text-xs uppercase tracking-wider text-gray-400 mb-5 font-semibold">
+          KONTAKTLAR
+        </div>
+        <div class="space-y-2.5 text-sm">
+          <div>
+            <a href="tel:+998787777757" class="hover:opacity-90 transition">
+              <span class="text-[#E04318] font-bold">+998</span> <span class="font-bold text-white">(78) 777 77 57</span>
+            </a>
+          </div>
+          <div class="text-gray-400 text-xs" data-i18n="footer_sched">
+            Har kuni 09:00 dan 20:00 gacha
+          </div>
+          <div>
+            <a href="mailto:info@marsit.uz" class="text-white hover:text-[#E04318] transition text-xs">info@marsit.uz</a>
+          </div>
+          <div>
+            <a href="#" class="text-gray-400 hover:text-white transition text-xs">To'lov va qaytarish</a>
+          </div>
+          <a href="#lead-form-section" class="mt-4 bg-[#D9431A] hover:bg-[#E04318] text-white text-sm font-semibold px-6 py-3 rounded-full inline-block text-center transition shadow-lg shadow-[#D9431A]/30 font-sans">
+            Bepul konsultatsiya
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="border-t border-white/[0.06] pt-6 max-w-[1320px] mx-auto px-6 flex flex-wrap justify-between items-center text-xs text-gray-500 gap-4">
+      <div>
+        © 2026 MARS IT School. Barcha huquqlar himoyalangan.
+      </div>
+      <div class="flex gap-5 font-medium">
+        <span class="text-white font-medium cursor-pointer">O'zbekcha</span>
+        <span class="hover:text-white cursor-pointer">Русский</span>
+        <span class="hover:text-white cursor-pointer">English</span>
+      </div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-gray-300 transition">To'lov va qaytarish</a>
+        <a href="#" class="hover:text-gray-300 transition">Ommaviy oferta</a>
+      </div>
+    </div>
+
+  </footer>
+
+
+  <!-- ==========================================
+       7. FLOATING ACTION WIDGETS (BOTTOM RIGHT)
+       Fixed at bottom-6 right-6 z-50 flex flex-col items-center gap-3
+       - Scroll-to-top button: Circular orange button with upward arrow ↑
+       - Cute 3D-styled white/orange robot assistant avatar button below it
+       ========================================== -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
+    
+    <!-- Scroll to Top Button (Circular Orange #D9431A w-12 h-12) -->
+    <button id="scroll-top-btn" class="w-12 h-12 rounded-full bg-[#D9431A] hover:bg-[#E04318] text-white flex items-center justify-center shadow-lg hover:scale-105 transition-all cursor-pointer opacity-0 pointer-events-none translate-y-4 shadow-[#D9431A]/40 text-lg font-bold" aria-label="Yuqoriga chiqish">
+      ↑
+    </button>
+
+    <!-- Cute 3D-styled white/orange robot assistant avatar button (w-14 h-14 rounded-full) -->
+    <div onclick="document.getElementById('lead-form-section').scrollIntoView({behavior:'smooth'})" class="w-14 h-14 rounded-full bg-gradient-to-tr from-[#E04318] via-[#FF6B4A] to-amber-300 p-[2px] shadow-2xl hover:scale-105 transition-transform cursor-pointer relative group" title="Yordamchi bilan suhbat">
+      <div class="w-full h-full bg-[#181818] rounded-full flex items-center justify-center text-2xl group-hover:bg-[#202020] transition-colors">
+        🤖
+      </div>
+      <!-- Live Pulse Online Dot -->
+      <span class="absolute top-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-[#121212]">
+        <span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-75"></span>
+      </span>
+    </div>
+
+  </div>
+
+
+  <!-- VIDEO TESTIMONIAL MODAL -->
+  <div id="video-testimonial-modal" class="modal-overlay">
+    <div class="modal-content rounded-[28px] overflow-hidden max-w-3xl w-[95%] relative bg-[#141414] border border-white/10 shadow-2xl">
+      <div class="p-4 sm:p-5 flex items-center justify-between border-b border-white/10 bg-[#1A1A1A]">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-[#E04318]/20 text-[#E04318] flex items-center justify-center font-bold text-lg">
+            ▶
+          </div>
+          <div>
+            <h4 id="video-modal-name" class="font-sans font-bold text-white text-base">Dilafruz Maksumova</h4>
+            <p id="video-modal-role" class="text-xs text-[#9E9EA7]" data-i18n="parent_role">Ota-ona</p>
+          </div>
+        </div>
+        <button id="video-modal-close" class="text-gray-400 hover:text-white p-2 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-lg leading-none cursor-pointer">
+          ✕
+        </button>
+      </div>
+      <div class="relative w-full aspect-video bg-black flex items-center justify-center">
+        <iframe id="video-modal-iframe" class="w-full h-full" src="" title="Video Testimonial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="p-4 bg-[#1A1A1A] border-t border-white/10 flex items-center justify-between text-xs text-[#9E9EA7]">
+        <span class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>MARS IT School o'quvchisi ota-onasining intervyusi</span>
+        </span>
+        <a href="#lead-form-section" onclick="document.getElementById('video-testimonial-modal').classList.remove('active')" class="btn-orange-hero text-xs py-2 px-4 rounded-full">
+          <span>Ochiq darsga yozilish</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- QUIZ MODAL -->
+  <div id="quiz-modal" class="modal-overlay">
+    <div class="modal-content p-6 sm:p-8 rounded-3xl max-w-lg w-full relative bg-[#1A1A1A]">
+      <button id="quiz-modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">✕</button>
+      <div class="text-center">
+        <span class="text-3xl mb-2 inline-block">🚀</span>
+        <h3 class="font-sans font-bold text-2xl text-white mb-2">Testdan o'tish</h3>
+        <p class="text-xs text-[#9E9EA7] mb-6 font-sans">Farzandingiz uchun mos IT-yo'nalishni 1 daqiqada aniqlang va +50 SPACE coin oling.</p>
+        <div class="space-y-3 text-left">
+          <a href="#lead-form-section" onclick="document.getElementById('quiz-modal').classList.remove('active')" class="block p-4 rounded-2xl bg-white/5 hover:bg-[#E04318]/10 border border-white/10 hover:border-[#E04318] transition-all">
+            <div class="font-bold text-white text-sm font-sans">9 – 11 yosh (AI Kids)</div>
+            <div class="text-xs text-[#9E9EA7] font-sans">Scratch, Roblox, vizual dasturlash va mantiq</div>
+          </a>
+          <a href="#lead-form-section" onclick="document.getElementById('quiz-modal').classList.remove('active')" class="block p-4 rounded-2xl bg-white/5 hover:bg-[#E04318]/10 border border-white/10 hover:border-[#E04318] transition-all">
+            <div class="font-bold text-white text-sm font-sans">12 – 14 yosh (AI Pilot)</div>
+            <div class="text-xs text-[#9E9EA7] font-sans">Python, Telegram botlar va Unity 3D o'yinlar</div>
+          </a>
+          <a href="#lead-form-section" onclick="document.getElementById('quiz-modal').classList.remove('active')" class="block p-4 rounded-2xl bg-white/5 hover:bg-[#E04318]/10 border border-white/10 hover:border-[#E04318] transition-all">
+            <div class="font-bold text-white text-sm font-sans">15 – 17 yosh (Hub Pro)</div>
+            <div class="text-xs text-[#9E9EA7] font-sans">Fullstack Web, Sun'iy Intellekt va FAANG amaliyoti</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOP REDEEM MODAL -->
+  <div id="shop-modal" class="modal-overlay">
+    <div class="modal-content p-6 sm:p-8 rounded-3xl max-w-md w-full relative text-center bg-[#1A1A1A]">
+      <button id="shop-modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">✕</button>
+      <div id="shop-modal-item-img" class="text-5xl mb-2">🎁</div>
+      <h3 id="shop-modal-item-title" class="font-sans font-bold text-xl text-white mb-1">Sovg'a</h3>
+      <p class="text-xs text-[#9E9EA7] mb-4 font-sans">Ballarni sovg'aga almashtirish buyurtmasi</p>
+      <div class="p-3 bg-black/40 rounded-xl mb-4 text-xs font-mono text-left flex justify-between">
+        <span class="text-gray-400">Kerakli coin:</span>
+        <span id="shop-modal-item-cost" class="text-[#E04318] font-bold">0 coin</span>
+      </div>
+      <a href="#lead-form-section" onclick="document.getElementById('shop-modal').classList.remove('active')" class="btn-orange-hero w-full py-3 text-sm font-bold rounded-xl block font-sans">
+        O'qishga yozilish va sovg'ani olish
+      </a>
+    </div>
+  </div>
+
+  <!-- FORM SUCCESS MODAL -->
+  <div id="form-success-modal" class="modal-overlay">
+    <div class="modal-content p-8 rounded-3xl max-w-md w-full text-center relative bg-[#1A1A1A]">
+      <div class="w-14 h-14 rounded-2xl bg-[#E04318]/20 text-[#E04318] flex items-center justify-center text-3xl mx-auto mb-4 border border-[#E04318]/40">
+        ✓
+      </div>
+      <h3 class="font-sans font-bold text-2xl text-white mb-2">
+        Arizangiz qabul qilindi, <span id="success-client-name" class="text-[#E04318]"></span>!
+      </h3>
+      <p class="text-xs text-[#9E9EA7] leading-relaxed mb-6 font-sans">
+        Operatorimiz 15 daqiqa ichida siz bilan bog'lanadi va bepul ochiq darsga joy ajratadi.
+      </p>
+      <button id="form-success-close" class="btn-orange-hero w-full py-3 text-sm font-bold rounded-xl cursor-pointer font-sans">
+        Tushundim
+      </button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
